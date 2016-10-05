@@ -15,4 +15,5 @@ Rails.application.routes.draw do
   post '/libraries/:library_id/users', to: 'library_users#create', as: 'library_users'
   get '/libraries/:library_id/edit', to: 'libraries#edit', as: 'edit_library'
   patch '/libraries/:library_id', to: 'libraries#update'
+  delete '/libraries/:library_id', to: 'libraries#destroy'
 end

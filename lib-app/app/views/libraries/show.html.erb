@@ -2,3 +2,4 @@
   Welcome to the page for <%= @library.name %>!
 </div>
 <%= button_to "Edit Library", edit_library_path(@library) %>
+<%= button_to "Delete Library", library_path(@library), method: :delete %>
