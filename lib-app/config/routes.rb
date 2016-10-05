@@ -7,4 +7,7 @@ Rails.application.routes.draw do
   get '/login', to: 'sessions#new'
   get '/logout', to: 'sessions#destroy'
   post '/sessions', to: 'sessions#create'
+  get '/libraries', to: 'libraries#index', as: 'libraries'
+  get '/libraries/new', to: 'libraries#new', as: 'new_libary'
+  post '/libraries', to: 'libraries#create'
 end
