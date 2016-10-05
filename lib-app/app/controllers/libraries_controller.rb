@@ -22,7 +22,10 @@ class LibrariesController < ApplicationController
   end
 
   def update
-    @library.update(library_params)    
+    @library = Library.find(params[:library_id])
+    if @library.update(library_params)  
+      redirect_to library_path(@library)
+    end
   end
 
   private
