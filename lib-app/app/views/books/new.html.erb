@@ -1,0 +1,9 @@
+<%= form_for @book do |f| %>
+  <div>
+    <%= f.text_field :title, placeholder: "Title" %>
+  </div>
+  <div>
+    <%= f.text_field :author, placeholder: "Author" %>
+  </div>
+  <%= f.submit %>
+<% end %>
