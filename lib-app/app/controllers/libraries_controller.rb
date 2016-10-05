@@ -17,6 +17,14 @@ class LibrariesController < ApplicationController
   	@library = Library.find_by_id(params[:id])
   end
 
+  def edit
+    @library = Library.find(params[:library_id])
+  end
+
+  def update
+    @library.update(library_params)    
+  end
+
   private
 
   def library_params
