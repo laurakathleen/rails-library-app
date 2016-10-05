@@ -10,7 +10,8 @@ class GrandmasController < ApplicationController
 
   def create
   	@grandma = Grandma.create(grandma_params)
-  	redirect_to root_path
+  	login(@grandma)
+  	redirect_to @grandma
   end
 
   def show
