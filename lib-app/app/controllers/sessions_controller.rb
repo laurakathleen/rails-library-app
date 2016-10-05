@@ -1,26 +1,19 @@
 class SessionsController < ApplicationController
 
   def new
-  	@user = User.new
+  	@grandma = Grandma.new
   end
 
   def create
-  	user_params = params.require(:user).permit(:email, :password)
-  	@user = User.confirm(user_params)
-  	if @user
-  	  login(@user)
-  	  flash[:notice] = "Successfully logged in."
-  	  redirect_to @user
-  	else
-  	  flash[:error] = "Incorrect email or password."
-  	  redirect_to login_path
-  	end
-  end
+  	grandma_params = params.require(:grandma).permit(:email, :password)
+  	@grandma = Grandma.confirm(grandma_params)
 
-  def destroy
-  	logout
-  	flash[:notice] = "Successfully logged out."
-  	redirect_to root_path
+  	if @grandma
+  	  login(@grandma)
+  	  redirect_to @grandma
+  	else
+   	  redirect_to login_path
+   	end
   end
 
 end
